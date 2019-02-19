@@ -468,7 +468,14 @@ if __name__=='__main__':
     
     RO2_indices=numpy.load(filename+'_RO2_indices.npy')    
     
-    pdb.set_trace()
+    #pdb.set_trace()
+    import pandas as pd
+    props_keys=["y_density_array_asnumpy","y_mw","sat_vp",
+                 "Delta_H","Latent_heat_asnumpy","include_index",
+                 "alpha_d_org_asnumpy","DStar_org_asnumpy","gamma_gas_asnumpy"]
+    props_dict={k:v for k,v in input_dict.items() if k in props_keys}
+    df=pd.DataFrame(data=props_dict)[props_keys]
+    df.to_csv("/data/pybox_props.csv",index=False)
 
     #Do you want to save the output from the simulation as a .npy file?
     save_output=True
