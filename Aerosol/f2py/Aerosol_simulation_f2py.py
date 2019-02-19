@@ -468,7 +468,7 @@ if __name__=='__main__':
     
     RO2_indices=numpy.load(filename+'_RO2_indices.npy')    
     
-    #pdb.set_trace()
+    pdb.set_trace()
 
     #Do you want to save the output from the simulation as a .npy file?
     save_output=True

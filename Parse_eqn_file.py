@@ -342,6 +342,7 @@ def extract_smiles_species(output_dict, SMILES_filename):
                     species_SMILES=re.search(r'<smiles>(.*?)</smiles>',node.getElementsByTagName('smiles').item(0).toxml()).group(1)
                 except:
                     print('No SMILES entry for species ',species_name)
+                    continue
                 SMILES_dict[species_name]=species_SMILES
                 Pybel_object=pybel.readstring('smi',species_SMILES)
                 Pybel_object_dict[species_SMILES]=Pybel_object
