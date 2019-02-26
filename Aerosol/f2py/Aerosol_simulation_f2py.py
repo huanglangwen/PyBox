@@ -79,7 +79,7 @@ if __name__=='__main__':
     hour_of_day=12.0
     start_time=hour_of_day*60*60 # seconds, used as t0 in solver
     simulation_time= 3600.0 # seconds
-    batch_step=300.0 # seconds
+    batch_step=3600.0 # seconds
     #Convert RH to concentration of water vapour molecules [this will change when in Parcel model mode]
     temp_celsius=temp-273.15
     # Saturation VP of water vapour, to get concentration of H20
@@ -141,11 +141,11 @@ if __name__=='__main__':
     if files_exist is False:
 
         # Delete any 'straggling' f90 or cython files
-        for fname in os.listdir('.'):
+        #for fname in os.listdir('.'):
             #if "f2py.cpython" in fname:
             #    os.remove(fname)
-            if ".f90" in fname:
-                os.remove(fname)
+            #if ".f90" in fname:
+                #os.remove(fname)
                 
         for fname in os.listdir('.'):
             if ".npy" in fname:
@@ -479,7 +479,7 @@ if __name__=='__main__':
 
     #Do you want to save the output from the simulation as a .npy file?
     save_output=True
-    plot_mass=True
+    plot_mass=False
     #-------------------------------------------------------------------------------------
     # 11) Run the simulation
     run_simulation(filename, save_output, start_time, temp, RH, RO2_indices, H2O, PInit, y_cond, input_dict, simulation_time, batch_step, plot_mass)
