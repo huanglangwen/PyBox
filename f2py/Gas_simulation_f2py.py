@@ -70,7 +70,7 @@ if __name__=='__main__':
     #Define a start time 
     hour_of_day=12.0
     start_time=hour_of_day*60*60 # seconds, used as t0 in solver
-    simulation_time= 7200.0 # seconds
+    simulation_time= 10800.0 # seconds
     batch_step=100.0 # seconds
     #2)Generate constants used in rate of reaction calculations
     #Convert RH to concentration of water vapour molecules [this will change when in Parcel model mode]
