@@ -79,7 +79,7 @@ if __name__=='__main__':
     hour_of_day=12.0
     start_time=hour_of_day*60*60 # seconds, used as t0 in solver
     simulation_time= 3600.0 # seconds
-    batch_step=3600.0 # seconds
+    batch_step=300.0 # seconds
     #Convert RH to concentration of water vapour molecules [this will change when in Parcel model mode]
     temp_celsius=temp-273.15
     # Saturation VP of water vapour, to get concentration of H20
